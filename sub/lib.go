@@ -1,5 +1,5 @@
 package sub
 
 func Where() string {
-	return "PKG: understandgomoddep/sub:v1.0.1"
+	return "PKG: understandgomoddep/sub:v1.1.0"
 }
