@@ -1,0 +1,20 @@
+WORK=/tmp/go-build947961832
+go: creating new go.mod: module github.com/exklamationmark/understandgomoddep
+github.com/exklamationmark/understandgomoddep/sub
+mkdir -p $WORK/b002/
+github.com/exklamationmark/understandgomoddep
+mkdir -p $WORK/b001/
+cat >$WORK/b002/importcfg << 'EOF' # internal
+# import config
+EOF
+cat >$WORK/b001/importcfg << 'EOF' # internal
+# import config
+EOF
+cd /home/dev/workspace/src/github.com/exklamationmark/understandgomoddep/sub
+/usr/local/go/pkg/tool/linux_amd64/compile -o $WORK/b002/_pkg_.a -trimpath $WORK/b002 -p github.com/exklamationmark/understandgomoddep/sub -lang=go1.12 -complete -buildid kHOFLSFEGMcyvp2twSVU/kHOFLSFEGMcyvp2twSVU -goversion go1.12 -D "" -importcfg $WORK/b002/importcfg -pack -c=4 ./lib.go
+cd /home/dev/workspace/src/github.com/exklamationmark/understandgomoddep
+/usr/local/go/pkg/tool/linux_amd64/compile -o $WORK/b001/_pkg_.a -trimpath $WORK/b001 -p github.com/exklamationmark/understandgomoddep -lang=go1.12 -complete -buildid RYR3WLxJzTP6OBwomgCy/RYR3WLxJzTP6OBwomgCy -goversion go1.12 -D "" -importcfg $WORK/b001/importcfg -pack -c=4 ./lib.go
+/usr/local/go/pkg/tool/linux_amd64/buildid -w $WORK/b002/_pkg_.a # internal
+/usr/local/go/pkg/tool/linux_amd64/buildid -w $WORK/b001/_pkg_.a # internal
+cp $WORK/b002/_pkg_.a /home/dev/.cache/go-build/16/16f635cecc8118c2c3b86efd15bab0b4cb1e46617d78e507747869e598e2a39d-d # internal
+cp $WORK/b001/_pkg_.a /home/dev/.cache/go-build/87/87727da3d5297cd9fd31881a33cc5ca10fc5e2da24be34c7cf1e9be5576dcc5d-d # internal
